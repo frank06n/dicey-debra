@@ -1,4 +1,4 @@
-# MERN Monorepo
+# MERN Monorepo 
 
 This is a MERN stack monorepo project with separate frontend (Vite + React) and backend (Express) applications.
 
