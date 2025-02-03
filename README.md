@@ -1,4 +1,11 @@
-# MERN Monorepo
+# EmPower Wellness
+EmPower Wellness. A Hult Prize Startup based on SDG 3 of the UNSDGs.
+
+Created by the following individuals:
+- Anamitra Roy
+- Niladri Bhowmick
+- Pritam Das
+- Sarin Sanyal
 
 This is a MERN stack monorepo project with separate frontend (Vite + React) and backend (Express) applications.
 
