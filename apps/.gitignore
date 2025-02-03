@@ -1,0 +1,27 @@
+# Node.js dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Build output
+/dist/
+/build/
+
+# Vite-related
+/.vite/
+/.vite/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor configurations
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
