@@ -14,6 +14,7 @@ function App() {
     <div>
       <h1>Simple MERN App</h1>
       <button onClick={handleClick}>Get Message</button>
+      <p>Hello World!</p>
       <p>Response: {message}</p>
     </div>
   );
