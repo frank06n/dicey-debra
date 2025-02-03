@@ -1,0 +1,26 @@
+.typewriter-text{
+    color: black;
+    font-size: 6px;
+}
+
+#user-journal-input{
+    width: 80vw;
+    height: 50vh;
+    border-radius: 10px;
+    vertical-align: top;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.journal-buttons{
+    margin: 10px;
+}
+
+#submit-button{
+    background-color:aqua;
+}
+
+#clear-button{
+    background-color: rgb(200, 200, 200);
+}

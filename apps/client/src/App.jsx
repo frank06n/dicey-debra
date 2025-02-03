@@ -1,23 +1,20 @@
-import { useState } from 'react'
-import { fetchMessage } from "./api";
-import './App.css'
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Opening from './Opening';
+import HomePage from './Homepage';
+import Journal from './Journal';
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  const handleClick = async () => {
-    const data = await fetchMessage();
-    setMessage(data.message);
-  };
-
-  return (
-    <div>
-      <h1>Simple MERN App</h1>
-      <button onClick={handleClick}>Get Message</button>
-      <p>Hello World!</p>
-      <p>Response: {message}</p>
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Opening />} />         {/* Path for Page1 */}
+                <Route path="/home" element={<HomePage />} />    {/* Path for Page2 */}
+                <Route path="/journal" element={<Journal />} />  {/* Path for Main Journal Page*/}
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
