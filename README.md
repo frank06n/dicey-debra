@@ -17,34 +17,65 @@ This is a MERN stack monorepo project with separate frontend (Vite + React) and 
 
 ### Installation
 
-1. Clone the repository:
+
+
+1. If you don't have pnpm installed:
+   
+   Install `pnpm` globally using `npm`:
+
+   ```bash
+   npm install -g pnpm
+   ``` 
+   
+   To confirm it’s installed, check the version:
+   
+   ```bash
+   pnpm -v
+   ```
+   
+2. Clone the repository:
 
    ```bash
    git clone https://github.com/yourusername/mern-monorepo.git
    cd mern-monorepo
    ```
 
-2. Install the dependencies:
+3. Install the dependencies:
 
    ```bash
    pnpm install
    ```
-
-3. Run the development servers:
-
    - For the frontend:
 
      ```bash
-     pnpm --filter client dev
+     cd apps/client
+     pnpm install
      ```
 
    - For the backend:
 
      ```bash
-     pnpm --filter server dev
+     cd apps/server
+     pnpm install
+     ```
+     
+4. Run the debugging locally:
+
+   - For the frontend:
+
+     ```bash
+     cd apps/client
+     npm run dev
      ```
 
-4. Access the frontend at `http://localhost:5173` and the backend at `http://localhost:5000`.
+   - For the backend:
+
+     ```bash
+     cd apps/server
+     npm run dev
+     ```
+
+5. Access the frontend at `http://localhost:5173` and the backend at `http://localhost:5000`.
 
 ## Deployment
 
@@ -64,7 +95,6 @@ To deploy the frontend and backend separately on Vercel, each app has its own de
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
 
 ### Key Sections:
 - **Overview**: Brief description of the project.
