@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import userRoutes from './user.js';  //Imports both schema and routes
+import journalRoutes from './journal.js'; //Same here
 
 dotenv.config();
 const app = express();
@@ -10,14 +12,22 @@ const app = express();
 // app.use(cors({
 //     origin: "https://test-fachie-frontend.vercel.app"
 // }));
-app.use(cors());
+
 app.use(express.json());
+app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("✅ Connected to MongoDB"))
-    .catch(err => console.error("❌ MongoDB Connection Error:", err));
+mongoose.connect(process.env.MONGO_URI, 
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).then(() => console.log("✅ Connected to MongoDB"))
+      .catch(err => console.error("❌ MongoDB Connection Error:", err));
+
 // Add MONGO_URI in Vercel's env variables under the frontend deployment
+
+app.use('/api/users', userRoutes);  
+app.use('/api/journal', journalRoutes);
 
 // Define a simple schema
 const MessageSchema = new mongoose.Schema({
