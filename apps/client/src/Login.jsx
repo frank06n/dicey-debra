@@ -1,5 +1,5 @@
-// src/Login.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -7,12 +7,13 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();  // Initialize navigate function
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/api/users/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
@@ -21,8 +22,9 @@ const Login = () => {
             const data = await response.json();
 
             if (response.status === 200) {
-                setMessage('Login successful!');
+                alert("Login successful");
                 setError('');
+                navigate("/opening");  // Redirect to homepage (Change as needed)   
             } else {
                 setError(data.error || 'Login failed');
                 setMessage('');
@@ -33,14 +35,14 @@ const Login = () => {
     };
 
     return (
-        <div className = "user-login">
+        <div className="user-login">
             <h2>Login to EmPower</h2>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {message && <p style={{ color: 'green' }}>{message}</p>}
-            <form className = "user-input" onSubmit={handleLogin}>
+            <form className="user-input" onSubmit={handleLogin}>
                 <input
-                    className = "input-area"
-                    id = "input-email"
+                    className="input-area"
+                    id="input-email"
                     type="email"
                     placeholder="Email"
                     value={email}
@@ -48,8 +50,8 @@ const Login = () => {
                     required
                 />
                 <input
-                    className = "input-area"
-                    id = "input-password"
+                    className="input-area"
+                    id="input-password"
                     type="password"
                     placeholder="Password"
                     value={password}

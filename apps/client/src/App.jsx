@@ -14,6 +14,7 @@ const isLoggedIn = () => {
 };
 
 function App() {
+    console.log("isLoggedIn:", isLoggedIn()); 
     return (
         <Router>
             <Routes>
@@ -25,12 +26,12 @@ function App() {
                 <Route path="/register" element={<Register />} />
 
                 {/* After login, Opening.jsx is the main home */}
-                <Route path="/opening" element={isLoggedIn() ? <Opening /> : <Navigate to="/login" />} />
+                <Route path="/opening" element={<Opening />} />
 
                 {/* Authenticated Routes */}
-                <Route path="/home" element={isLoggedIn() ? <HomePage /> : <Navigate to="/login" />} />
-                <Route path="/journal" element={isLoggedIn() ? <Journal /> : <Navigate to="/login" />} />
-                <Route path="/profile" element={isLoggedIn() ? <Profile /> : <Navigate to="/login" />} />
+                <Route path="/home" element={ <HomePage />} />
+                <Route path="/journal" element={ <Journal /> } />
+                <Route path="/profile" element={ <Profile /> } />
             </Routes>
         </Router>
     );

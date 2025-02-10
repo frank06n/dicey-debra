@@ -17,7 +17,7 @@ const Register = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/register`, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/api/users/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, dob, phone, email, password, occupation, bloodGroup }),
@@ -34,6 +34,7 @@ const Register = () => {
             }
         } catch (err) {
             setError('An error occurred during registration');
+            console.log(err);
         }
     };
 

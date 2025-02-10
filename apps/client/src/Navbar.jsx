@@ -11,10 +11,10 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <ul>
-                <div className="left-buttons">
-                    <li><Link to="/">Home</Link></li>
+                <div className="buttons left-buttons">
+                    <li><Link to="/opening">Home</Link></li>
                 </div>
-                <div className="right-buttons">
+                <div className="buttons right-buttons">
                     <li><Link to="/profile">Profile</Link></li>
                     {/*Add more buttons here*/}
                 </div>

@@ -1,8 +1,11 @@
 .navbar {
-    background-color: #dceaf8; /* Dark grey */
     color: white;
     padding: 15px 0; /* Top and bottom padding */
     border-radius: 10px;
+}
+
+.buttons{
+    background-color: #dceaf8; /* Dark grey */
 }
 
 .navbar ul {

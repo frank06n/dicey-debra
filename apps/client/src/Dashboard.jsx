@@ -11,7 +11,7 @@ const Dashboard = () => {
 
         const fetchJournals = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/journal/${userId}`);
+                const response = await fetch(`${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/journal/${userId}`);
                 const data = await response.json();
 
                 if (response.status === 200) {
